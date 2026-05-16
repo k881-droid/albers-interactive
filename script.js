@@ -1,33 +1,30 @@
-let expandComp = document.getElementById('expand-comp');
+let visibleClass = 'visible'
 
-let expandObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
+let expandComp = document.querySelector('#expand-comp')
+let floatComps = document.querySelectorAll('[data-float]')
 
-expandObserver.observe(expandComp);
+let expandObserver = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+        expandComp.classList.add(visibleClass)
+    } else {
+        expandComp.classList.remove(visibleClass)
+    }
+}, {
+    rootMargin: '-25% 0% -25% 0%',
+})
 
-let floatComps = document.querySelectorAll('[data-float]');
+expandObserver.observe(expandComp)
 
-let floatObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  },
-  { threshold: 0.25 }
-);
+floatComps.forEach((comp) => {
+    let floatObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            comp.classList.add(visibleClass)
+        } else {
+            comp.classList.remove(visibleClass)
+        }
+    }, {
+        rootMargin: '-25% 0% -25% 0%',
+    })
 
-floatComps.forEach((comp) => floatObserver.observe(comp));
+    floatObserver.observe(comp)
+})
