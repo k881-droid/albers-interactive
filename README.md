@@ -1,6 +1,6 @@
 # Kinza Ghanchi Type & Interaction Semester 2
 ## albers-interactive
-### This project digitizes an infamous physical art installation. More specifically, my work centers on Joseph Albers' work, and making that interactive for the digital space. Created for my T&I class at Parsons.
+### This project digitizes an infamous physical art installation. More specifically, my work centers on Josef Albers' work, and making that interactive for the digital space. Created for my T&I class at Parsons.
 
 <img width="377" height="570" alt="image" src="https://github.com/user-attachments/assets/aa302ab4-867c-49bc-a716-4870e841b823" />
 
