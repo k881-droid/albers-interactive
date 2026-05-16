@@ -78,3 +78,43 @@ body {
   font-family: var(--font-serif);
   overflow-x: hidden;
 }
+
+/* ── HERO ── */
+
+.hero {
+  min-block-size: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-m);
+}
+
+.eyebrow {
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  opacity: var(--opacity-label);
+  margin-block-end: var(--space-s);
+}
+
+.hero-title {
+  font-size: var(--text-hero);
+  font-weight: normal;
+  line-height: var(--leading-tight);
+  margin-block-end: var(--space-s);
+}
+
+.hero-title em {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.hero-desc {
+  font-size: var(--text-body);
+  opacity: var(--opacity-muted);
+  max-inline-size: var(--max-desc);
+  line-height: var(--leading-loose);
+}
