@@ -149,3 +149,70 @@ body {
   opacity: 1;
   transition-delay: calc(var(--stagger) * 3);
 }
+
+/* ── PIECE 2: FLOAT ── */
+
+.float-row {
+  display: flex;
+  gap: var(--float-gap);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.comp {
+  position: relative;
+  inline-size: var(--comp-outer);
+  block-size: var(--comp-outer);
+}
+
+.layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(var(--float-offset));
+  transition: transform var(--dur-float) var(--ease-out);
+}
+
+.layer-1 {
+  inline-size: var(--comp-outer);
+  block-size: var(--comp-outer);
+  transition-delay: 0s;
+}
+
+.layer-2 {
+  inline-size: calc(var(--comp-outer) - var(--comp-step));
+  block-size: calc(var(--comp-outer) - var(--comp-step));
+  transition-delay: var(--stagger);
+}
+
+.layer-3 {
+  inline-size: calc(var(--comp-outer) - calc(var(--comp-step) * 2));
+  block-size: calc(var(--comp-outer) - calc(var(--comp-step) * 2));
+  transition-delay: calc(var(--stagger) * 2);
+}
+
+.layer-4 {
+  inline-size: calc(var(--comp-outer) - calc(var(--comp-step) * 3));
+  block-size: calc(var(--comp-outer) - calc(var(--comp-step) * 3));
+  transition-delay: calc(var(--stagger) * 3);
+}
+
+.comp.visible .layer {
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.comp-b .layer-1 { background-color: var(--b-1); }
+.comp-b .layer-2 { background-color: var(--b-2); }
+.comp-b .layer-3 { background-color: var(--b-3); }
+.comp-b .layer-4 { background-color: var(--b-4); }
+
+.comp-c .layer-1 { background-color: var(--c-1); }
+.comp-c .layer-2 { background-color: var(--c-2); }
+.comp-c .layer-3 { background-color: var(--c-3); }
+.comp-c .layer-4 { background-color: var(--c-4); }
+
+.comp-d .layer-1 { background-color: var(--d-1); }
+.comp-d .layer-2 { background-color: var(--d-2); }
+.comp-d .layer-3 { background-color: var(--d-3); }
+.comp-d .layer-4 { background-color: var(--d-4); }
