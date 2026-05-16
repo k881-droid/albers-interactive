@@ -2,10 +2,14 @@
   --color-bg:   #ffffff;
   --color-text: #1a1a1a;
 
-  --sq-1: #2b1d0e;
-  --sq-2: #7c3a1e;
-  --sq-3: #d4832a;
-  --sq-4: #f5d97e;
+  --sq-1: #1a0e05;
+  --sq-2: #2b1d0e;
+  --sq-3: #5a2a0e;
+  --sq-4: #7c3a1e;
+  --sq-5: #b85c20;
+  --sq-6: #d4832a;
+  --sq-7: #edb55a;
+  --sq-8: #f5d97e;
 
   --b-1: #0d1f2d;
   --b-2: #1a4a5a;
@@ -26,8 +30,8 @@
   --space-m:  2.5rem;
   --space-l:  5rem;
 
-  --sq-outer: 23.75rem;
-  --sq-step:  5.625rem;
+  --sq-outer: 90vmin;
+  --sq-step:  10vmin;
 
   --comp-outer:   15rem;
   --comp-step:    3.75rem;
@@ -89,6 +93,7 @@ body {
   position: relative;
   inline-size: var(--sq-outer);
   block-size: var(--sq-outer);
+  max-inline-size: 100%;
 }
 
 .sq {
@@ -126,6 +131,30 @@ body {
   background-color: var(--sq-4);
 }
 
+.sq:nth-child(5) {
+  inline-size: calc(var(--sq-outer) - calc(var(--sq-step) * 4));
+  block-size: calc(var(--sq-outer) - calc(var(--sq-step) * 4));
+  background-color: var(--sq-5);
+}
+
+.sq:nth-child(6) {
+  inline-size: calc(var(--sq-outer) - calc(var(--sq-step) * 5));
+  block-size: calc(var(--sq-outer) - calc(var(--sq-step) * 5));
+  background-color: var(--sq-6);
+}
+
+.sq:nth-child(7) {
+  inline-size: calc(var(--sq-outer) - calc(var(--sq-step) * 6));
+  block-size: calc(var(--sq-outer) - calc(var(--sq-step) * 6));
+  background-color: var(--sq-7);
+}
+
+.sq:nth-child(8) {
+  inline-size: calc(var(--sq-outer) - calc(var(--sq-step) * 7));
+  block-size: calc(var(--sq-outer) - calc(var(--sq-step) * 7));
+  background-color: var(--sq-8);
+}
+
 .squares-wrap.visible .sq:nth-child(1) {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -148,6 +177,30 @@ body {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   transition-delay: calc(var(--stagger) * 3);
+}
+
+.squares-wrap.visible .sq:nth-child(5) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: calc(var(--stagger) * 4);
+}
+
+.squares-wrap.visible .sq:nth-child(6) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: calc(var(--stagger) * 5);
+}
+
+.squares-wrap.visible .sq:nth-child(7) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: calc(var(--stagger) * 6);
+}
+
+.squares-wrap.visible .sq:nth-child(8) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: calc(var(--stagger) * 7);
 }
 
 /* ── PIECE 2: FLOAT ── */
